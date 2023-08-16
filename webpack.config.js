@@ -8,7 +8,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, 'dist') // Serve files from the 'dist' directory
     },
-    watchFiles: ['scss/**/*.scss'], // Watch SCSS files
+    watchFiles: ['src/**/*.*'], // Watch SCSS files
     open: true
   },
   module: {
