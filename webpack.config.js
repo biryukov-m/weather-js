@@ -2,8 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
-  // mode: 'development',
-  mode: 'production',
+  mode: 'development',
+  // mode: 'production',
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist') // Serve files from the 'dist' directory
@@ -18,9 +18,15 @@ module.exports = {
         exclude: /node_modules/,
         use: 'ts-loader'
       },
+      // for styling in scss
       {
-        test: /\.(s*)css$/,
+        test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      // for tailwind init in css
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.(jpg|png|svg|gif)$/,
