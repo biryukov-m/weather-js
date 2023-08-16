@@ -8,6 +8,113 @@
 </head>
 
 <body>
+  <header>
+    <div class="search-wrapper">
+      <input type="text" name="search" id="search">
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <article class="hero__info">
+        <div class="hero__top-info">
+          <div class="hero__image-holder"><img src="" alt="" srcset=""></div>
+          <p class="hero__temperature"></p>
+          <p class="hero__location"></p>
+        </div>
+        <div class="hero__bottom-info">
+          <div class="hero__datetime">
+            <span class="hero__time"></span>
+            <span class="hero__date"></span>
+            <span>Today's sunrise.</span>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="panels">
+      <article class="panels__card --day-temp">
+        <h3 class="panels__header">Today's temperature</h3>
+        <div class="panels__today-hourly-temps">
+          <span>18c</span>
+          <span>18c</span>
+          <span>18c</span>
+          <span>18c</span>
+          <span>18c</span>
+          <span>18c</span>
+          <span>18c</span>
+        </div>
+      </article>
+      <article class="panels__card --week">
+        <h3 class="panels__header">Weather this week</h3>
+        <div class="panels__week-weatherline">
+          <div class="panels__weekday">
+            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
+            <p class="panels__weekday">Mon</p>
+          </div>
+          <div class="panels__weekday">
+            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
+            <p class="panels__weekday">Mon</p>
+          </div>
+          <div class="panels__weekday">
+            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
+            <p class="panels__weekday">Mon</p>
+          </div>
+          <div class="panels__weekday">
+            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
+            <p class="panels__weekday">Mon</p>
+          </div>
+          <div class="panels__weekday">
+            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
+            <p class="panels__weekday">Mon</p>
+          </div>
+          <div class="panels__weekday">
+            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
+            <p class="panels__weekday">Mon</p>
+          </div>
+          <div class="panels__weekday">
+            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
+            <p class="panels__weekday">Mon</p>
+          </div>
+        </div>
+      </article>
+      <article class="panels__card --forecast">
+        <h3 class="panels__header">Weather forecast</h3>
+        <div class="panels__today-forecast">
+          <div class="panels__today-forecast__line">
+            <div class="panels__weather-description">Mostly sunny</div>
+            <div class="panels__now-datetime">
+              <p class="panels__now-datetime__line">
+                <span class="panels__now-datetime__weekday"></span>
+                <span class="panels__now-datetime__time"></span>
+              </p>
+              <span class="panels__now-datetime__date"></span>
+            </div>
+            <div class="panels__avg-temp"></div>
+          </div>
+          <div class="panels__today-forecast__line">
+            <div class="panels__humidity">
+              <h4 class="panels__humidity_header --parameter-header">Humidity</h4>
+              <p class="panels__humidity__value">21%</p>
+            </div>
+            <div class="panels__sunset">
+              <h4 class="panels__sunset_header --parameter-header">Sunset</h4>
+              <p class="panels__sunset__value">06:45 PM</p>
+            </div>
+          </div>
+
+          <div class="panels__today-forecast__line">
+            <div class="panels__uv-index">
+              <h4 class="panels__uv-index_header --parameter-header">UV index</h4>
+              <p class="panels__uv-index__value">0 of 30</p>
+            </div>
+            <div class="panels__sunrise">
+              <h4 class="panels__sunrise_header --parameter-header">Sunrise</h4>
+              <p class="panels__sunrise__value">05:45 AM</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
   <script src="./bundle.js"></script>
 </body>
 
