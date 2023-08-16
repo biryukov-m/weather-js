@@ -1,5 +1,8 @@
 # 💠 ENV
 root: true
+ignorePatterns:
+  - 'node_modules/'
+  - 'dist/'
 env:
   browser: true
   es2021: true
@@ -10,14 +13,12 @@ extends:
   - plugin:prettier/recommended
 
 # 💠 Parser
-parser: '@typescript-eslint/parser'
+# parser: '@typescript-eslint/parser'
 
 # 💠 Parser options
 parserOptions:
   ecmaVersion: latest
   sourceType: module
-  project:
-    - ./tsconfig.json
 
 # 💠 Plugins
 plugins:
@@ -96,17 +97,9 @@ rules:
   # Need it to stop if SERVICE is not passed
   '@typescript-eslint/no-throw-literal': 'off'
 # ⭐ Overrides
-# overrides:
-#   [
-#     {
-#       files: ['*.ts', '*.tsx'],
-#       rules: { 'no-undef': 'off' },
-#       parserOptions: { project: ['./tsconfig.json'] }
-#     }
-#   ]
 
 overrides:
   - files: '*.ts'
     parser: '@typescript-eslint/parser'
     parserOptions:
-      project: './tsconfig.json'
+      project: './tsconfig.json' # Adjust this path as needed
