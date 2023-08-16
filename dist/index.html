@@ -4,36 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <title>Document</title>
 </head>
 
-<body>
-  <header>
+<body class="bg-slate-200 rounded">
+  <header class="container mx-auto py-6 mb-3">
     <div class="search-wrapper">
-      <input type="text" name="search" id="search">
+      <input class="rounded border-solid w-60 px-2 py-1 font-sans text-base text-black" type="text" name="search"
+        id="search" placeholder="Enter city ...">
     </div>
   </header>
-  <main>
-    <section class="hero">
-      <article class="hero__info">
-        <div class="hero__top-info">
-          <div class="hero__image-holder"><img src="" alt="" srcset=""></div>
-          <p class="hero__temperature"></p>
-          <p class="hero__location"></p>
+  <main class="container mx-auto">
+    <section class="rounded mb-3 h-96 w-full bg-slate-500 p-5 shadow-xl hover:shadow-2xl">
+      <article class="flex flex-col justify-between h-full">
+        <div>
+          <div><span class="material-symbols-outlined text-blue-700 text-3xl">sunny</span></div>
+          <p class="text-5xl font-sans text-blue-400 font-bold">30 <span class="text-3xl">C</span></p>
+          <p class="text-xl font-sans text-blue-400">Kharkiv, KH, Ukraine</p>
         </div>
-        <div class="hero__bottom-info">
-          <div class="hero__datetime">
-            <span class="hero__time"></span>
-            <span class="hero__date"></span>
-            <span>Today's sunrise.</span>
-          </div>
+        <div class="font-sans text-white">
+          <p>
+            <span class="uppercase font-bold text-xl">05:45 AM</span>
+            <span class="text-lg">Sun, 03-03-23</span>
+          </p>
+          <p class="text-lg font-thin">Today's sunrise.</p>
         </div>
       </article>
     </section>
-    <section class="panels">
-      <article class="panels__card --day-temp">
-        <h3 class="panels__header">Today's temperature</h3>
-        <div class="panels__today-hourly-temps">
+    <section class="grid grid-rows-3 grid-cols-2 gap-4 mb-3 h-96 w-full">
+      <article
+        class="p-4 shadow-xl hover:shadow-2xl row-start-1 row-end-3 flex flex-col justify-between rounded  bg-white">
+        <h3 class="font-sans text-black font-bold text-sm mb-2">Today's temperature</h3>
+        <div class="flex justify-between flex-row text-base text-blue-400">
           <span>18c</span>
           <span>18c</span>
           <span>18c</span>
@@ -43,72 +46,74 @@
           <span>18c</span>
         </div>
       </article>
-      <article class="panels__card --week">
-        <h3 class="panels__header">Weather this week</h3>
-        <div class="panels__week-weatherline">
-          <div class="panels__weekday">
-            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
-            <p class="panels__weekday">Mon</p>
+      <article class="p-4 shadow-xl hover:shadow-2xl rounded bg-white  ">
+        <h3 class="font-sans text-black font-bold text-sm mb-2">Weather this week</h3>
+        <div class="flex justify-between">
+          <div class="flex flex-col">
+            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black">Mon</p>
           </div>
-          <div class="panels__weekday">
-            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
-            <p class="panels__weekday">Mon</p>
+          <div class="flex flex-col">
+            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black text-center">Tue</p>
           </div>
-          <div class="panels__weekday">
-            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
-            <p class="panels__weekday">Mon</p>
+          <div class="flex flex-col">
+            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black text-center">Wen</p>
           </div>
-          <div class="panels__weekday">
-            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
-            <p class="panels__weekday">Mon</p>
+          <div class="flex flex-col">
+            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black text-center">Thur</p>
           </div>
-          <div class="panels__weekday">
-            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
-            <p class="panels__weekday">Mon</p>
+          <div class="flex flex-col">
+            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black text-center">Fri</p>
           </div>
-          <div class="panels__weekday">
-            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
-            <p class="panels__weekday">Mon</p>
+          <div class="flex flex-col">
+            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black text-center">Sat</p>
           </div>
-          <div class="panels__weekday">
-            <div class="panels__weekday__icon-wrapper"><img src="" alt=""></div>
-            <p class="panels__weekday">Mon</p>
+          <div class="flex flex-col">
+            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black text-center">Sun</p>
           </div>
         </div>
       </article>
-      <article class="panels__card --forecast">
-        <h3 class="panels__header">Weather forecast</h3>
-        <div class="panels__today-forecast">
-          <div class="panels__today-forecast__line">
-            <div class="panels__weather-description">Mostly sunny</div>
-            <div class="panels__now-datetime">
-              <p class="panels__now-datetime__line">
-                <span class="panels__now-datetime__weekday"></span>
-                <span class="panels__now-datetime__time"></span>
-              </p>
-              <span class="panels__now-datetime__date"></span>
+      <article class="p-4 relative shadow-xl hover:shadow-2xl row-span-full col-start-2 rounded bg-white  ">
+        <h3 class="font-sans text-black font-bold text-sm mb-2">Weather forecast</h3>
+        <div class="font-sans flex flex-col absolute top-12 bottom-3 left-6 right-6 gap-3 justify-between">
+          <div class="flex justify-between py-3 px-6 text-white bg-blue-500 rounded">
+            <div class="flex items-center justify-between gap-5">
+              <p class="text-2xl">Mostly sunny</p>
+              <div class="flex flex-col text-slate-200 gap-1">
+                <p class="text-sm font-thin self-end">
+                  <span>Sunday, </span>
+                  <span>12:34 PM</span>
+                </p>
+                <span class="font-normal text-sm">03-03-22</span>
+              </div>
             </div>
-            <div class="panels__avg-temp"></div>
+            <div class="text-2xl flex items-center"><span class="mx-2">26 C</span><span
+                class="material-symbols-outlined text-white text-3xl">sunny</span></div>
           </div>
-          <div class="panels__today-forecast__line">
-            <div class="panels__humidity">
-              <h4 class="panels__humidity_header --parameter-header">Humidity</h4>
-              <p class="panels__humidity__value">21%</p>
+          <div class="flex justify-between  py-3 px-6">
+            <div class="flex flex-col">
+              <h4 class="text-xl text-slate-500">Humidity</h4>
+              <p class="text-lg text-black">21%</p>
             </div>
-            <div class="panels__sunset">
-              <h4 class="panels__sunset_header --parameter-header">Sunset</h4>
-              <p class="panels__sunset__value">06:45 PM</p>
+            <div class="flex flex-col">
+              <h4 class="text-xl text-slate-500">Sunset</h4>
+              <p class="text-lg text-black">06:45 PM</p>
             </div>
           </div>
-
-          <div class="panels__today-forecast__line">
-            <div class="panels__uv-index">
-              <h4 class="panels__uv-index_header --parameter-header">UV index</h4>
-              <p class="panels__uv-index__value">0 of 30</p>
+          <div class="flex justify-between  py-3 px-6">
+            <div class="flex flex-col">
+              <h4 class="text-xl text-slate-500">UV index</h4>
+              <p class="text-lg text-black">0 of 30</p>
             </div>
-            <div class="panels__sunrise">
-              <h4 class="panels__sunrise_header --parameter-header">Sunrise</h4>
-              <p class="panels__sunrise__value">05:45 AM</p>
+            <div class="flex flex-col">
+              <h4 class="text-xl text-slate-500">Sunrise</h4>
+              <p class="text-lg text-black">05:45 AM</p>
             </div>
           </div>
         </div>
