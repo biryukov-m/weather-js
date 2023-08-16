@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // The target ECMAScript version you want to transpile to
+    "module": "ES6", // The module system to use (you can use ES6 modules)
+    "outDir": "./dist", // The output directory for the compiled JavaScript files
+    "rootDir": "./src", // The root directory of your TypeScript files
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Enable compatibility with CommonJS modules
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*.ts"] // Specify the path to your TypeScript files
+}
