@@ -34,48 +34,35 @@
     </section>
     <section class="grid grid-rows-3 grid-cols-2 gap-4 mb-3 h-96 w-full">
       <article
-        class="p-4 shadow-xl hover:shadow-2xl row-start-1 row-end-3 flex flex-col justify-between rounded  bg-white">
+        class="row-start-1 row-end-3 p-4 shadow-xl hover:shadow-2xl flex flex-col justify-between rounded  bg-white">
         <h3 class="font-sans text-black font-bold text-sm mb-2">Today's temperature</h3>
-        <div class="flex justify-between flex-row text-base text-blue-400">
-          <span>18c</span>
-          <span>18c</span>
-          <span>18c</span>
-          <span>18c</span>
-          <span>18c</span>
-          <span>18c</span>
-          <span>18c</span>
+        <div class="w-full h-full">
+          <canvas id="chart"></canvas>
         </div>
+
       </article>
-      <article class="p-4 shadow-xl hover:shadow-2xl rounded bg-white  ">
+      <article class="p-4 shadow-xl hover:shadow-2xl rounded bg-white">
         <h3 class="font-sans text-black font-bold text-sm mb-2">Weather this week</h3>
         <div class="flex justify-between">
-          <div class="flex flex-col">
-            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
-            <p class="font-sans text-sm text-black">Mon</p>
+          <div class="flex flex-col" data-id="forecast-0">
+            <span class="block material-symbols-outlined text-blue-500 text-3xl">sunny</span>
+            <p class="font-sans text-sm text-black" data-id="day">Mon</p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-id="forecast-1">
             <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
-            <p class="font-sans text-sm text-black text-center">Tue</p>
+            <p class="font-sans text-sm text-black text-center" data-id="day">Tue</p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-id="forecast-2">
             <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
-            <p class="font-sans text-sm text-black text-center">Wen</p>
+            <p class="font-sans text-sm text-black text-center" data-id="day">Wen</p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-id="forecast-3">
             <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
-            <p class="font-sans text-sm text-black text-center">Thur</p>
+            <p class="font-sans text-sm text-black text-center" data-id="day">Thur</p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-id="forecast-4">
             <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
-            <p class="font-sans text-sm text-black text-center">Fri</p>
-          </div>
-          <div class="flex flex-col">
-            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
-            <p class="font-sans text-sm text-black text-center">Sat</p>
-          </div>
-          <div class="flex flex-col">
-            <span class="material-symbols-outlined text-blue-500 text-3xl">sunny</span>
-            <p class="font-sans text-sm text-black text-center">Sun</p>
+            <p class="font-sans text-sm text-black text-center" data-id="day">Fri</p>
           </div>
         </div>
       </article>

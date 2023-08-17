@@ -1,9 +1,16 @@
 import './styles/style.scss';
 import './styles/tailwind.css';
 import { debounce } from 'lodash';
+
 import { WeatherService } from './Weather.service';
 import { serializeApiWeather, IWeather } from './types/weather.types';
 import { getWindDirection } from './utils/getWindDirection';
+import {
+  IForecast,
+  serializeForecast,
+  serializeForecastChart
+} from './types/forecast.types';
+import { drawWeatherChart } from './utils/chart';
 
 const SEARCH_INPUT = document.querySelector('#search') as HTMLInputElement;
 const CURRENT_TEMP = document.querySelector('#temp') as HTMLElement;
@@ -53,16 +60,29 @@ const renderWeather = (weatherArgs: IWeather) => {
   WIND_SPEED.innerText = windSpeed;
   WIND_DIRECTION.innerText = getWindDirection(Number(windDeg));
 };
+const renderForecast = (forecast: IForecast) => {
+  forecast.forEach((item, idx) => {
+    const CONTAINER = document.querySelector(`[data-id="forecast-${idx}"]`);
+    const DAY = CONTAINER?.querySelector('[data-id="day"]') as HTMLElement;
+    DAY.innerText = item.date.toLocaleDateString(undefined, {
+      weekday: 'short'
+    });
 
+    DAY.innerText = item.date.toLocaleDateString();
+  });
+};
 const searchHandler = async (e: Event) => {
   const target = e.target as HTMLInputElement;
-  const { value } = target;
+  const { value: searchValue } = target;
   const weatherService = new WeatherService();
-  const weather = await weatherService.fetchWeather(value);
-  const serializedWeather = serializeApiWeather(weather);
-  renderWeather(serializedWeather);
-  const forecast = await weatherService.fetchForecast(value);
-  console.log(forecast);
+  weatherService
+    .fetchWeather(searchValue)
+    .then((response) => serializeApiWeather(response))
+    .then((serialized) => renderWeather(serialized));
+  weatherService.fetchForecast(searchValue).then((response) => {
+    renderForecast(serializeForecast(response));
+    drawWeatherChart(serializeForecastChart(response));
+  });
 };
 
 const debouncedSearchHandler = debounce(searchHandler, 1200);
