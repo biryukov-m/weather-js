@@ -20,11 +20,11 @@ export class WeatherService {
     return response.json();
   }
 
-  async fetchForecast(searchInput: string, days = '7') {
+  async fetchForecast(searchInput: string, cnt = '56') {
     const url = new URL(this.baseUrl);
     url.pathname += 'forecast';
     url.searchParams.append('q', searchInput);
-    url.searchParams.append('cnt', days);
+    url.searchParams.append('cnt', cnt);
     url.searchParams.append('units', 'metric');
     const urlWithKey = this.appendKeyToUrl(url);
     const response = await fetch(urlWithKey);
