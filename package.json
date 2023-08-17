@@ -10,8 +10,11 @@
     "start": "webpack serve --config webpack.config.js",
     "build": "webpack --config webpack.config.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
+    "@types/lodash": "^4.14.197",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "autoprefixer": "^10.4.15",
