@@ -20,7 +20,7 @@ Chart.register(
 const selectorCtx = document.querySelector('canvas#chart') as HTMLCanvasElement;
 const context = selectorCtx.getContext('2d') as CanvasRenderingContext2D;
 
-export const drawWeatherChart = (forecast: IForecastChart) => {
+export default (forecast: IForecastChart) => {
   // Sample data for the line graph
   const labels = forecast.map(({ date }) => date);
   const dataset = forecast.map(({ temp }) => temp);
@@ -61,7 +61,6 @@ export const drawWeatherChart = (forecast: IForecastChart) => {
       }
     }
   };
-  const initChart = () => new Chart(context, lineChartConfig);
 
-  initChart();
+  return new Chart(context, lineChartConfig);
 };

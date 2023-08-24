@@ -2,6 +2,7 @@ import './styles/style.scss';
 import './styles/tailwind.css';
 import { debounce } from 'lodash';
 
+import { Chart, ChartTypeRegistry, Point, BubbleDataPoint } from 'chart.js';
 import { WeatherService } from './Weather.service';
 import { serializeApiWeather, IWeather } from './types/weather.types';
 import { getWindDirection } from './utils/getWindDirection';
@@ -10,7 +11,7 @@ import {
   serializeForecast,
   serializeForecastChart
 } from './types/forecast.types';
-import { drawWeatherChart } from './utils/chart';
+import getWeatherChart from './utils/getWeatherChart';
 
 const SEARCH_INPUT = document.querySelector('#search') as HTMLInputElement;
 const CURRENT_TEMP = document.querySelector('#temp') as HTMLElement;
@@ -71,6 +72,13 @@ const renderForecast = (forecast: IForecast) => {
     DAY.innerText = item.date.toLocaleDateString();
   });
 };
+
+let chart: Chart<
+  keyof ChartTypeRegistry,
+  (number | Point | [number, number] | BubbleDataPoint | null)[],
+  unknown
+>;
+
 const searchHandler = async (e: Event) => {
   const target = e.target as HTMLInputElement;
   const { value: searchValue } = target;
@@ -81,7 +89,12 @@ const searchHandler = async (e: Event) => {
     .then((serialized) => renderWeather(serialized));
   weatherService.fetchForecast(searchValue).then((response) => {
     renderForecast(serializeForecast(response));
-    drawWeatherChart(serializeForecastChart(response));
+    if (chart) {
+      chart.destroy();
+    }
+    const serializedForecast = serializeForecastChart(response);
+    chart = getWeatherChart(serializedForecast);
+    chart.render();
   });
 };
 

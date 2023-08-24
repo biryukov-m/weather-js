@@ -9,8 +9,7 @@
     "esModuleInterop": true, // Enable compatibility with CommonJS modules
     "moduleResolution": "node",
     "allowJs": true,
-    "checkJs": true,
-    "declaration": true
+    "checkJs": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "lib"] // Specify the path to your TypeScript files
