@@ -2,8 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
-  mode: 'development',
-  // mode: 'production',
+  // mode: 'development',
+  mode: 'production',
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist') // Serve files from the 'dist' directory

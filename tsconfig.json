@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
     "lib": ["DOM", "ES2015"],
-    "target": "ES5", // The target ECMAScript version you want to transpile to
-    "module": "CommonJS", // The module system to use (you can use ES6 modules)
-    "outDir": "./dist", // The output directory for the compiled JavaScript files
+    "target": "ESNext", // The target ECMAScript version you want to transpile to
+    "module": "ESNext", // The module system to use (you can use ES6 modules)
     "rootDir": "./src", // The root directory of your TypeScript files
     "strict": true, // Enable strict type checking
     "esModuleInterop": true, // Enable compatibility with CommonJS modules
